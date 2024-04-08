@@ -14,20 +14,15 @@ public class Learner{
         this.emergencyContact = emergencyContact;
         this.gradeLevel = gradeLevel;
     }
-
-    // Getters and Setters
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getGender() {
         return gender;
     }
-
     public void setGender(String gender) {
         this.gender = gender;
     }
