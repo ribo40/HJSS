@@ -1,26 +1,27 @@
 package HJSS;
+import java.util.ArrayList;
+import java.util.List;
 public class Coach {
-    private int id;
     private String name;
-    public Coach(int id, String name) {
-        this.id = id;
+    private int rating;
+    private List<Lesson> lessonsTaught;
+    public Coach(String name) {
         this.name = name;
+        this.lessonsTaught = new ArrayList<>();
     }
-
-    public int getId() {
-        return id;
-    }
-
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
+    }
+    public List<Lesson> getLessonsTaught() {
+        return lessonsTaught;
+    }
+    public void setLessonsTaught(List<Lesson> lessonsTaught) {
+        this.lessonsTaught = lessonsTaught;
+    }
+    public void addLesson(Lesson lesson) {
+        lessonsTaught.add(lesson);
     }
 }

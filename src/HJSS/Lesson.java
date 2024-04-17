@@ -1,52 +1,113 @@
 package HJSS;
-
-public class Lesson {
-    private int id;
+import java.util.ArrayList;
+import java.util.List;
+public class Lesson implements Cloneable {
+    private String day;
+    private String time;
     private int gradeLevel;
-    private String dayOfWeek;
-    private String timeSlot;
-    private int coachId;
-    public Lesson(int id, int gradeLevel, String dayOfWeek, String timeSlot, int coachId) {
-        this.id = id;
+    private String coach;
+    private int week;
+    private int vacancy;
+    private List<Learner> learners;
+    private int rating;
+    public Lesson(String day, String time, int gradeLevel, String coach, int vacancy) {
+        this.day = day;
+        this.time = time;
         this.gradeLevel = gradeLevel;
-        this.dayOfWeek = dayOfWeek;
-        this.timeSlot = timeSlot;
-        this.coachId = coachId;
+        this.coach = coach;
+        this.vacancy=vacancy;
+        this.learners = new ArrayList<>();
     }
-    public int getId() {
-        return id;
+    public String getDay() {
+        return day;
+    }
+    public void setDay(String day) {
+        this.day = day;
+    }
+    public Lesson(String day, String time, int gradeLevel, String coach) {
+        this.day = day;
+        this.time = time;
+        this.gradeLevel = gradeLevel;
+        this.coach = coach;
+        this.learners = new ArrayList<>();
     }
 
-    // Setter for ID
-    public void setId(int id) {
-        this.id = id;
+    public String getTime() {
+        return time;
     }
-
+    public void setTime(String time) {
+        this.time = time;
+    }
     public int getGradeLevel() {
         return gradeLevel;
     }
-    public void setGradeLevel(int gradeLevel) {
-        this.gradeLevel = gradeLevel;
+    public void setGradeLevel(int gradeLevel)
+    {
+        this.gradeLevel=gradeLevel;
+    }
+    public String getCoach() {
+        return coach;
+    }
+    public void setCoach(String coach) {
+        this.coach = coach;
+    }
+    public int getVacancy()
+    {
+        return vacancy;
+    }
+    public void setVacancy(int vacancy)
+    {
+        this.vacancy=vacancy;
+    }
+    public List<Learner>getLearners()
+    {
+
+        return learners;
+    }
+    public int getRating()
+    {
+        return rating;
+    }
+    public void setRating(int rating)
+    {
+        this.rating = rating;
+    }
+    public void setLearners(List<Learner> learners)
+    {
+        this.learners = learners;
+    }
+    public boolean addLearner(Learner learner)
+    {
+        if (learners.size() < 4) {
+            learners.add(learner);
+            return true;
+        }
+        return false;
+    }
+    public int getWeek() {
+        return week;
     }
 
-    public String getDayOfWeek() {
-        return dayOfWeek;
+    public void setWeek(int week)
+    {
+        this.week = week;
     }
-    public void setDayOfWeek(String dayOfWeek) {
-        this.dayOfWeek = dayOfWeek;
+    public boolean removeLearner(Learner learner)
+    {
+        return learners.remove(learner);
     }
-
-    public String getTimeSlot() {
-        return timeSlot;
+    @Override
+    public String toString()
+    {
+        return "Lesson{" +
+                "day='" + day + '\'' +
+                ", week=" + week +
+                ", time='" + time + '\'' +
+                ", gradeLevel=" + gradeLevel +
+                '}';
     }
-    public void setTimeSlot(String timeSlot) {
-        this.timeSlot = timeSlot;
-    }
-    public int getCoachId() {
-        return coachId;
-    }
-
-    public void setCoachId(int coachId) {
-        this.coachId = coachId;
+    @Override
+    protected Object clone() throws CloneNotSupportedException {
+        return super.clone();
     }
 }
