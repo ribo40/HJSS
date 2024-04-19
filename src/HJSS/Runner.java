@@ -32,14 +32,14 @@ public class Runner {
                 case 4:
                     System.out.println("Enter the month number (e.g., 3 for March):");
                     int month =in.nextInt();
-                    //
                     in.nextLine();
+                    swimmingSchool.monthlyReport(month);
                     break;
                 case 5:
                     System.out.println("Enter the month number (e.g., 3 for March): ");
                     int month1 =in.nextInt();
                     in.nextLine();
-                    //
+                    swimmingSchool.monthlyReportForCoach(month1);
                     break;
                 case 6:
                     swimmingSchool.NewLearnerReg();

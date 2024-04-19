@@ -8,8 +8,8 @@ public class Learner {
     private String emergencyContact;
     private int currentGrade;
     private List<Lesson> bookedLessons;
-    private List<Lesson> cancelledLessons;
     private List<Lesson> attendedLessons;
+    private List<Lesson> cancelledLessons;
     public Learner(String name, String gender, int age, String emergencyContact, int currentGrade) {
         this.name = name;
         this.gender = gender;
@@ -17,8 +17,8 @@ public class Learner {
         this.emergencyContact = emergencyContact;
         this.currentGrade = currentGrade;
         this.bookedLessons = new ArrayList<>();
-        this.cancelledLessons = new ArrayList<>();
         this.attendedLessons = new ArrayList<>();
+        this.cancelledLessons = new ArrayList<>();
     }
     public String getName() {
         return name;
@@ -87,7 +87,18 @@ public class Learner {
         bookedLessons.remove(oldLesson);
         bookedLessons.add(newLesson);
     }
-
+    /*public void canceLesson(Lesson lesson) {
+        bookedLessons.remove(lesson);
+        cancelledLessons.add(lesson);
+    }
+    public int getRatingForLesson(Lesson lesson) {
+        for (Lesson attendedLesson : attendedLessons) {
+            if (attendedLesson.equals(lesson)) {
+                return attendedLesson.getRating();
+            }
+        }
+        return -1;
+    }*/
     public void incrementGrade()
     {
         this.currentGrade++;
@@ -96,4 +107,5 @@ public class Learner {
         bookedLessons.remove(lesson);
         cancelledLessons.add(lesson);
     }
+
 }
