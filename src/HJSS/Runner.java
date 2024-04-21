@@ -54,12 +54,12 @@ public class Runner {
         }
     }
     private static void bookLesson(SwimmingSchool swimmingSchool, Scanner scanner) {
-        System.out.println("Enter your name:\n");
+        System.out.println("Enter your name: ");
         String learnerName = scanner.nextLine();
+        System.out.println("Choose option from 1 to 3: ");
         System.out.println("1. View timetable by Day");
         System.out.println("2. View timetable by Grade level");
         System.out.println("3. View timetable by Coach");
-        System.out.println("Choose option from 1 to 3: ");
         int option = scanner.nextInt();
         scanner.nextLine();
         String Value;

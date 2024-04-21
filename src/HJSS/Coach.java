@@ -7,7 +7,7 @@ public class Coach {
     private List<Lesson> lessonsTaught;
     public Coach(String name) {
         this.name = name;
-        this.lessonsTaught = new ArrayList<>();
+        this.lessonsTaught= new ArrayList<>();
     }
     public String getName() {
         return name;
@@ -15,13 +15,13 @@ public class Coach {
     public void setName(String name) {
         this.name = name;
     }
+
     public List<Lesson> getLessonsTaught() {
         return lessonsTaught;
     }
+
     public void setLessonsTaught(List<Lesson> lessonsTaught) {
         this.lessonsTaught = lessonsTaught;
     }
-    public void addLesson(Lesson lesson) {
-        lessonsTaught.add(lesson);
-    }
+
 }

@@ -61,37 +61,6 @@ public class SwimmingSchool {
     {
         lessons.add(lesson);
     }
-    public void addNewLesson() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the day:");
-        String day = scanner.nextLine();
-        System.out.println("Enter the time:");
-        String time = scanner.nextLine();
-        System.out.println("Enter the grade level:");
-        int gradeLevel = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Enter the coach name:");
-        String coach = scanner.nextLine();
-        System.out.println("Enter the vacancy of the lesson:");
-        int vacancy = scanner.nextInt();
-        scanner.nextLine();
-        Lesson lesson = new Lesson(day, time, gradeLevel, coach, vacancy);
-        addLesson(lesson);
-        System.out.println("Lesson added successfully.");
-    }
-
-    public void addCoach(Coach coach) {
-        coaches.add(coach);
-    }
-    public void addNewCoach() {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the name of the coach:");
-        String name = scanner.nextLine();
-        Coach coach = new Coach(name);
-        addCoach(coach);
-        System.out.println("Coach successfully added.");
-    }
-
     public void addLearner(Learner learner)
     {
         learners.add(learner);
@@ -480,7 +449,7 @@ public class SwimmingSchool {
         String Wrange = findWeekRange(monthNum);
         String[] a = null;
         try {
-            a= Wrange.split(",");
+            a= Wrange.split("-");
         } catch (Exception e) {
             System.out.println("The month entered is invalid");
             return;

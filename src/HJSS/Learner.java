@@ -27,7 +27,6 @@ public class Learner {
     public void setName(String name) {
         this.name = name;
     }
-
     public String getGender() {
         return gender;
     }
@@ -87,18 +86,6 @@ public class Learner {
         bookedLessons.remove(oldLesson);
         bookedLessons.add(newLesson);
     }
-    /*public void canceLesson(Lesson lesson) {
-        bookedLessons.remove(lesson);
-        cancelledLessons.add(lesson);
-    }
-    public int getRatingForLesson(Lesson lesson) {
-        for (Lesson attendedLesson : attendedLessons) {
-            if (attendedLesson.equals(lesson)) {
-                return attendedLesson.getRating();
-            }
-        }
-        return -1;
-    }*/
     public void incrementGrade()
     {
         this.currentGrade++;
